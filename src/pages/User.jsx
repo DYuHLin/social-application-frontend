@@ -23,7 +23,7 @@ function User() {
   const [filteredSearch, setFilteredSearch] = useState('new')
 
   const {user} = useContext(AppContext)
-  const decoded = jwtDecode(user)
+  const decoded = jwtDecode(user.accessToken)
   let { id } = useParams()
 
   useEffect(() => {

@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import {useNavigate} from 'react-router-dom'
@@ -10,7 +9,7 @@ import UploadProfileImage from './components/UploadProfileImage'
 
 function EditProfile() {
   const {user, setUser} = useContext(AppContext)
-  const decoded = jwtDecode(user)
+  const decoded = jwtDecode(user.accessToken)
   const [toggle, setToggle] = useState(false)
   const [name, setName] = useState(decoded.user.name)
   const [surname, setSurname] = useState(decoded.user.surname)

@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 function LogoutAndDelete({users}) {
     const {user, setUser} = useContext(AppContext)
-    const decoded = jwtDecode(user)
+    const decoded = jwtDecode(user.accessToken)
     const [toggle, setToggle] = useState(false)
     const navigate = useNavigate()
 

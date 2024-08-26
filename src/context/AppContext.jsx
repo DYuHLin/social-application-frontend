@@ -7,8 +7,8 @@ const AppContext = createContext()
 
 export const AppProvider = ({children}) => {
     const getInitialState = () => {
-        const localUser = Cookies.get('tokens')
-        return localUser ? localUser : false
+        const localUser = sessionStorage.getItem("APP_USER")
+        return localUser ? JSON.parse(localUser) : false
     };
     const [user, setUser] = useState(getInitialState)
     const defaultPic = import.meta.env.VITE_PIC
@@ -18,6 +18,10 @@ export const AppProvider = ({children}) => {
             user === false ? (<Navigate to='/login' />) : user ? (<Outlet />) : ''
         )
     }
+
+    useEffect(() => {
+        sessionStorage.setItem('APP_USER', JSON.stringify(user));
+    }, [user]);
     
     return(
         <AppContext.Provider value={{ProtectedRoutes, user, setUser, defaultPic}}>

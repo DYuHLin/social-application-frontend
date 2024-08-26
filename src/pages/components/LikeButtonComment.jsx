@@ -6,9 +6,9 @@ import { jwtDecode } from 'jwt-decode'
 
 function LikeButtonComment({commentId, likes, comment}) {
     const {user} = useContext(AppContext)
-    const decoded = jwtDecode(user)
+    const decoded = jwtDecode(user.accessToken)
     const likeButton = () => {
-        const decoded = jwtDecode(user)
+        const decoded = jwtDecode(user.accessToken)
         try{
             axios.put(`${import.meta.env.VITE_URI}/comment/${commentId}/like`, {userId: decoded.user._id, liker: comment.user._id}, {headers: {'Content-Type': 'Application/json'}})
             console.log('liked')

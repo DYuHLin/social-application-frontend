@@ -12,7 +12,7 @@ function UserComments({comments, loading, filteredSearch}) {
   const [comment, setComment] = useState(false)
   const [commentsC, setCommentsC] = useState([])
   const {user} = useContext(AppContext)
-  const decoded = jwtDecode(user)
+  const decoded = jwtDecode(user.accessToken)
 
   const togglePopup = (id) => {
     setToggle(!toggle)

@@ -13,7 +13,7 @@ function Comment() {
     const [single, setSingle] = useState(false)
     const [comments, setComments] = useState([])
     const {user} = useContext(AppContext)
-    const decoded = jwtDecode(user)
+    const decoded = jwtDecode(user.accessToken)
 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_URI}/comment/${id}/comment`, {headers: {'Content-Type': 'application/json'}})

@@ -22,7 +22,7 @@ function Home() {
   const [filteredSearch, setFilteredSearch] = useState('new')
   const [filteredResults, setFilteredResults] = useState([])
   const {user, setUser} = useContext(AppContext)
-  const decoded = jwtDecode(user)
+  const decoded = jwtDecode(user.accessToken)
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_URI}/posts/`, {headers: {'Content-Type': 'application/json'}})

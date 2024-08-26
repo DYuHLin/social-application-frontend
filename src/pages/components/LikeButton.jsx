@@ -8,10 +8,10 @@ import { CiHeart } from "react-icons/ci"
 function LikeButton({postId, post}) {
 
     const {user} = useContext(AppContext)
-    const decoded = jwtDecode(user)
+    const decoded = jwtDecode(user.accessToken)
 
     const likeButton = () => {
-        const decoded = jwtDecode(user)
+        const decoded = jwtDecode(user.accessToken)
         try{
             axios.put(`${import.meta.env.VITE_URI}/posts/${postId}/like`, {userId: decoded.user._id, yourId: post.user._id}, {headers: {'Content-Type': 'Application/json'}})
             console.log('liked')

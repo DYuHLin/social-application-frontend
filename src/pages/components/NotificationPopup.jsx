@@ -9,7 +9,7 @@ function NotificationPopup({toggle, setToggle, notifications, setNotifications})
 
     const clearNotifications = () => {
         try{
-            axios.delete(`${import.meta.env.VITE_URI}/notifications/${jwtDecode(user).user._id}/delete`, {headers: {'Content-Type': 'Application/json'}})
+            axios.delete(`${import.meta.env.VITE_URI}/notifications/${jwtDecode(user.accessToken).user._id}/delete`, {headers: {'Content-Type': 'Application/json'}})
             toast.success('You have successfully cleared notifications.')
             setNotifications([])
         }catch(err){

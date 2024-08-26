@@ -8,7 +8,7 @@ function UserPopup() {
     const [users, setUsers] = useState([])
     const [status, setStatus] = useState('')
     const {user} = useContext(AppContext)
-    const decoded = jwtDecode(user)
+    const decoded = jwtDecode(user.accessToken)
 
     useEffect(() => {
     axios.get(`${import.meta.env.VITE_URI}/auth/getusers`, {headers:{'content-type': 'application/json'}})

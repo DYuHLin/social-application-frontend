@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 function DeleteAccount({toggle, setToggle}) {
     const {user, setUser} = useContext(AppContext)
-    const decoded = jwtDecode(user)
+    const decoded = jwtDecode(user.accessToken)
     const navigate = useNavigate()
 
     const deleteAccount = () => {

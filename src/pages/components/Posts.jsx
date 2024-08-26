@@ -8,7 +8,7 @@ import LinkPreview from './LinkPreview'
 
 function Posts({posts, loading, regular, comments, filteredSearch}) {
     const {user} = useContext(AppContext)
-    const decoded = jwtDecode(user)
+    const decoded = jwtDecode(user.accessToken)
 
   return (
     <>

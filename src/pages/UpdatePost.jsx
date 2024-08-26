@@ -25,7 +25,7 @@ function UpdatePost() {
 
   const handleSumbmit = (e) => {
     e.preventDefault()
-    const decoded = jwtDecode(user)
+    const decoded = jwtDecode(user.accessToken)
     const post = {userId: decoded.user._id, text: text, link: link, video: video, youtube: tube, pics: images}
     try{
       axios.put(`${import.meta.env.VITE_URI}/posts/${id}/update`, post, {headers: {'Content-Type': 'application/json'}})

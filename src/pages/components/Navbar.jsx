@@ -20,7 +20,7 @@ function Navbar() {
       if(user === false){
         return
       } else {
-        axios.get(`${import.meta.env.VITE_URI}/notifications/${jwtDecode(user).user._id}`, {headers: {'Content-Type': 'application/json'}})
+        axios.get(`${import.meta.env.VITE_URI}/notifications/${jwtDecode(user.accessToken).user._id}`, {headers: {'Content-Type': 'application/json'}})
       .then((res) => {
         setNotifications(res.data)
       })
@@ -38,14 +38,14 @@ function Navbar() {
         <h1 className='project-title' onClick={() => navigate('/')}>Clones</h1>
 
         <ul className={`dropdown ${menu == false ? '' : !user ? '' : user !== false && !menu ? '' : 'dropdown-active'}`}>
-            <li onClick={() => navigate(`user/${jwtDecode(user).user._id}`)}>Profile</li>
+            <li onClick={() => navigate(`user/${jwtDecode(user.accessToken).user._id}`)}>Profile</li>
             <li onClick={() => {setToggle2(true); notifcationPop();}}>Notifications</li>
             <li onClick={() => {setToggle(true);}}>Search</li>
           </ul>
 
           <div className="app-links">
           {!user ? '' :<div className='profile-link'>
-          <img src={jwtDecode(user).user.image} alt="user's image" className='profile-img' onClick={() => setMenu(!menu)}/>
+          <img src={jwtDecode(user.accessToken).user.image} alt="user's image" className='profile-img' onClick={() => setMenu(!menu)}/>
           </div>}           
         </div>
       </nav>

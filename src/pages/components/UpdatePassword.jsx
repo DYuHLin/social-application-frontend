@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 function UpdatePassword({toggle, setToggle}) {
     const {user} = useContext(AppContext)
-    const decoded = jwtDecode(user)
+    const decoded = jwtDecode(user.accessToken)
     const [current, setCurrent] = useState('')
     const [password, setPassword] = useState('')
     const [confirm, setConfirm] = useState('')

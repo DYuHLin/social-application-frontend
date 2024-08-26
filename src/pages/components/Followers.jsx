@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 
 function Followers({toggle, setToggle, users, id}) {
     const {user} = useContext(AppContext)
-    const decoded = jwtDecode(user)
+    const decoded = jwtDecode(user.accessToken)
     const [followers, setFollowers] = useState([])
     const [hidden, setHidden] = useState(false)
 

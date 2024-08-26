@@ -24,7 +24,7 @@ function Login() {
         setError('Your username or password is incorrect.')
       } else {
         toast.success('You have successfully logged in.')
-        setUser(Cookies.get('tokens'))
+        setUser(res.data)
         navigate('/')
       }
     }catch(err){
@@ -42,7 +42,7 @@ function Login() {
         setError('Your username or password is incorrect.')
       } else {
         toast.success('You have successfully logged in.')
-        setUser(Cookies.get('tokens'))
+        setUser(res.data)
         navigate('/')
       }
     }catch(err){
