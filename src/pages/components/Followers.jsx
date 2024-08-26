@@ -11,7 +11,7 @@ function Followers({toggle, setToggle, users, id}) {
     const [hidden, setHidden] = useState(false)
 
 useEffect(() => {
-    axios.get(`http://localhost:3000/api/auth/${id}/followers`, {headers:{'content-type': 'application/json'}})
+    axios.get(`${import.meta.env.VITE_URI}/auth/${id}/followers`, {headers:{'content-type': 'application/json'}})
         .then((res) => {
         setFollowers(res.data)
         }).catch((err) => {
@@ -21,7 +21,7 @@ useEffect(() => {
     },[id])
 
 const follow = (userId) => {
-    axios.put(`http://localhost:3000/api/auth/${decoded.user._id}/follow`, {followerId: userId}, {headers:{'content-type': 'application/json'}})
+    axios.put(`${import.meta.env.VITE_URI}/auth/${decoded.user._id}/follow`, {followerId: userId}, {headers:{'content-type': 'application/json'}})
     .then((res) => {
         setStatus(res.data)
         if(res.data === 'deleted'){
