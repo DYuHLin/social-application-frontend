@@ -866,3 +866,9 @@ body::-webkit-scrollbar-thumb {
     gap: 20px;
   }
 }
+
+@media (max-width: 419px){
+  .popup .popup-content{
+    width: 350px;
+  }
+}
