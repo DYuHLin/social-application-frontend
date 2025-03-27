@@ -21,7 +21,6 @@ main{
 .link-preview{
   cursor: pointer;
   background-color: #481e8b; 
-  border-radius: 7px;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -57,7 +56,6 @@ section{
   width: 85%;
   margin-bottom: 60px;
   padding: 24px;
-  border-radius: 7px;
   background-color: #242a50;
 }
 
@@ -174,7 +172,6 @@ ul{
 
 .dropdown{
   display: none;
-  border-radius: 7px;
   justify-content: right;
   transition: all 800ms ease-in-out;
 }
@@ -205,11 +202,10 @@ li{
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  background-color: #161e49;
-  border-radius: 7px;
   border: none;
   min-width: 100%;
   gap: 40px;
+  border-bottom: 1.5px solid black;
 }
 
 .comment-container{
@@ -217,7 +213,6 @@ li{
   flex-direction: column;
   padding: 2rem;
   background-color: #161e49;
-  border-radius: 7px;
   border: none;
   margin-bottom: 30px;
   min-width: 100%;
@@ -229,7 +224,6 @@ li{
   display: flex;
   padding: 2rem;
   background-color: #161e49;
-  border-radius: 7px;
   border: none;
   margin-bottom: 30px;
   width: 100%;
@@ -257,7 +251,6 @@ li{
   display: flex;
   flex-direction: column;
   background-color: #161e49;
-  border-radius: 7px;
   overflow-y: scroll;
 }
 
@@ -297,18 +290,15 @@ li{
 }
 
 .user-detail{
-  height: 100%;
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
 .img-round{
-  height: 100%;
   width: 20%;
   display: flex;
   align-items: center;
-  padding: 15px;
 }
 
 .img-round2{
@@ -351,7 +341,6 @@ input::-webkit-file-upload-button:hover{
   border: none;
   background-color: #481e8b;
   width: 80%;
-  border-radius: 7px;
   padding: 10px;
 
 }
@@ -651,6 +640,7 @@ a{
   justify-content: center;
   flex-direction: column;
   gap: 30px;
+  background-color: #161e49;
   width: 80%;
 }
 
@@ -673,7 +663,6 @@ a{
 }
 
 .comment-field{
-  border-radius: 6px;
   border: 1px solid black;
 }
 
